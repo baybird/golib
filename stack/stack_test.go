@@ -36,4 +36,14 @@ func TestStack(t *testing.T) {
 	if stack.Len() != 1 {
 		t.Errorf("Pop() method failed. Length of stack should 1 now.")
 	}
+
+	// test Top() method
+	e = stack.Top()
+	if e.(float64) != 3.1415 {
+		t.Errorf("Top() method failed. It should be 3.1415")
+	}
+
+	if stack.Len() != 0 {
+		t.Errorf("Stack length should be 0.")
+	}
 }
