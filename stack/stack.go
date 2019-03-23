@@ -24,7 +24,16 @@ func (this *Stack) Push(ele interface{}) {
 
 // Pop up last element
 func (this *Stack) Pop() interface{} {
-	element := (*this)[1]
-	*this = (*this)[1:]
-	return element
+	length := len(*this)
+	if length > 0 {
+		lastIndex := length - 1
+		element := (*this)[lastIndex]
+		*this = (*this)[0:lastIndex]
+		return element
+	} else {
+		return nil
+	}
+
 }
+
+// Top - return the first element
